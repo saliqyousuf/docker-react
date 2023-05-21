@@ -31,4 +31,12 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile.dev'
         tags: |
           $(tag)
-    
+
+    - task: BeanstalkDeployApplication@1
+      inputs:
+         awsCredentials: 'aws-elasticbanstalk-deployment'
+         regionName: 'us-east-1'
+         applicationName: 'reactfrontend'
+         environmentName: 'Reactfrontend-env'
+         applicationType: 's3'
+         deploymentBundleBucket: 'elasticbeanstalk-us-east-1-853110405500'

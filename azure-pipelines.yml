@@ -40,4 +40,4 @@ stages:
         environmentName: 'Reactfrontend-env'
         applicationType: 's3'
         deploymentBundleBucket: 'elasticbeanstalk-us-east-1-853110405500'
-        deploymentBundleKey: 'docker'
+        deploymentBundleKey: 'https://elasticbeanstalk-us-east-1-853110405500.s3.amazonaws.com/.elasticbeanstalk'

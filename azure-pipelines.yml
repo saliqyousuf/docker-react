@@ -34,9 +34,10 @@ stages:
 
     - task: BeanstalkDeployApplication@1
       inputs:
-         awsCredentials: 'aws-elasticbanstalk-deployment'
-         regionName: 'us-east-1'
-         applicationName: 'reactfrontend'
-         environmentName: 'Reactfrontend-env'
-         applicationType: 's3'
-         deploymentBundleBucket: 'elasticbeanstalk-us-east-1-853110405500'
+        awsCredentials: 'docker-react-frontend-admin'
+        regionName: 'us-east-1'
+        applicationName: 'reactfrontend'
+        environmentName: 'Reactfrontend-env'
+        applicationType: 's3'
+        deploymentBundleBucket: 'elasticbeanstalk-us-east-1-853110405500'
+        deploymentBundleKey: 'docker'

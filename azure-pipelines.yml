@@ -24,6 +24,14 @@ stages:
     - task: NodeTaskRunnerInstaller@0
       inputs:
         nodeVersion: '6'
+      
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '$(Build.BinariesDirectory)'
+        includeRootFolder: true
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/Sample.zip'
+        replaceExistingArchive: true
     - task: Docker@2
       displayName: Build an image
       inputs:
